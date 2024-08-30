@@ -1,12 +1,4 @@
 import { Model, Types } from "mongoose";
-export type TProfile = {
-  bio: string;
-  skills: string;
-  resume: string;
-  resumeOriginalName: string;
-  company: Types.ObjectId;
-  profilePhoto: string;
-};
 
 export type TUser = {
   fullName: string;
@@ -14,7 +6,7 @@ export type TUser = {
   phoneNumber: string;
   password: string;
   role: string;
-  profileInfo: TProfile;
+  profilePhoto: string;
   createdAt: Date;
   updatedAt: Date;
 };
