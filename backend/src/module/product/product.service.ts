@@ -11,9 +11,13 @@ const updateProduct =async (payload: TProduct, _id: string) =>{
         const result =await product.updateOne({_id},payload)
     return result
 }
-
+const getAllProduct =async () =>{
+    const result =await product.find()
+    return result
+}
 
 export default {
     addProduct,
-    updateProduct
+    updateProduct,
+    getAllProduct
 }
