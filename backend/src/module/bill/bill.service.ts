@@ -6,6 +6,12 @@ const newBill =async (payload: TBill) =>{
     return result
 }
 
+const getAllBill =async () =>{
+    const result =await bill.find().populate('user').populate('products')
+    return result
+}
+
 export default {
-    newBill
+    newBill,
+    getAllBill
 }

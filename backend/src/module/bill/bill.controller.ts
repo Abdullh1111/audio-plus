@@ -10,6 +10,16 @@ const newBill = catchAsync(async (req, res) => {
     })
 })
 
+const getAllBill = catchAsync(async (req, res) => {
+    const result =await billService.getAllBill()
+    res.status(201).json({
+        success: true,
+        message: "Place a new order",
+        data: result
+    })
+})
+
 export default {
-    newBill
+    newBill,
+    getAllBill
 }
