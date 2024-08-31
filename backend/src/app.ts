@@ -3,6 +3,7 @@ import cors from "cors";
 import globalErrorHandler from "./ErrorHandler/globalErrorHandler";
 import userRouter from "./module/users/user.router";
 import cookieParser from 'cookie-parser'
+import productRouter from "./module/product/product.router";
 // midleware
 const app = express();
 app.use(express.json());
@@ -13,6 +14,7 @@ app.use(cookieParser())
 // routers
 const url = '/api/v1'
 app.use(`${url}/user`,userRouter)
+app.use(`${url}/product`,productRouter)
 
 app.get("/", (req, res) => {
   res.send("Hello World!");

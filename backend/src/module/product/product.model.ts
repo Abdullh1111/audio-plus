@@ -5,6 +5,7 @@ const productScheema = new Schema<TProduct>({
     productName:{type:String, required:true},
     price: {type: Number, required: true},
     details: {type: String, required: true},
+    category:{type:String,required:true},
     rating: {type: Number},
     productImage: {type: String, required: true}
 })
