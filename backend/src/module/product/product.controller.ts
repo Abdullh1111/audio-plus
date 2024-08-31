@@ -32,8 +32,20 @@ const getAllProduct = catchAsync(async (req, res) => {
     })
 })
 
+// get product by id
+const getProductById = catchAsync(async (req, res) => {
+    const { id } = req.params;
+    const result =await productService.getProductById(id)
+    res.status(200).json({
+        success: true,
+        message: "Get all product successfully",
+        data: result
+    })
+})
+
 export default {
     addProduct,
     updateProduct,
-    getAllProduct
+    getAllProduct,
+    getProductById
 }

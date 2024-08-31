@@ -16,8 +16,14 @@ const getAllProduct =async () =>{
     return result
 }
 
+const getProductById =async (id:string) =>{
+    const result =await product.findById(id)
+    return result
+}
+
 export default {
     addProduct,
     updateProduct,
-    getAllProduct
+    getAllProduct,
+    getProductById
 }
