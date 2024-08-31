@@ -17,7 +17,7 @@ const authAdmin = (req:Request,res: Response, next: NextFunction) =>{
         throw new appError("User is unauthorize",401)
     }
     if(decode.role==='Admin'){
-        console.log(decode);
+        // console.log(decode);
         
         next()
     }
