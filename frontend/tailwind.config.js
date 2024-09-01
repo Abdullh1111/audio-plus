@@ -8,6 +8,15 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    extend: {
+      colors: {
+        primary: '#fff',
+        secondary: '#f1c40f',
+      },
+      fontFamily: {
+        sans: ['Poppins', 'sans-serif'],
+      },
+    },
   },
   plugins: [daisyui],
 }
