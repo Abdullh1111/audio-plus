@@ -1,9 +1,10 @@
 
 
+
 const Mainlayout = () => {
     return (
-        <div>
-            <div>navBar</div>
+        <div className="max-w-[1600px] mx-auto">
+            <hr />
             <div>content</div>
             <div>footer</div>
         </div>
