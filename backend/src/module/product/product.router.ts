@@ -6,6 +6,7 @@ const productRouter = Router()
 productRouter.post('/addproduct',authAdmin,productController.addProduct);
 productRouter.put('/update/:id',authAdmin,productController.updateProduct);
 productRouter.get('/getallproduct',productController.getAllProduct);
+productRouter.get('/getproductbypage',productController.getProductByPage);
 productRouter.get('/getproduct/:id',productController.getProductById);
 productRouter.get('/getproductbycategory/:category',productController.getProductByCategory);
 

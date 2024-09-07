@@ -43,6 +43,18 @@ const getProductById = catchAsync(async (req, res) => {
     })
 })
 
+// get product by pages
+const getProductByPage = catchAsync(async (req, res) => {
+    const { page, limit } = req.query;
+    const result =await productService.getProductByPage(Number(page),Number(limit))
+    res.status(200).json({
+        success: true,
+        message: "Get all product successfully",
+        data: result
+    })
+})
+
+
 const getProductByCategory = catchAsync(async (req, res) => {
     const { category } = req.params;
     const result =await productService.getProductByCategory(category)
@@ -58,5 +70,6 @@ export default {
     updateProduct,
     getAllProduct,
     getProductById,
-    getProductByCategory
+    getProductByCategory,
+    getProductByPage
 }

@@ -32,10 +32,18 @@ const getProductByCategory =async (category: string) =>{
     return result
 }
 
+const getProductByPage =async (page: number,limit: number) =>{
+    const skip = page*limit
+    const result =await product.find().skip(skip).limit(limit)
+    
+    return result
+}
+
 export default {
     addProduct,
     updateProduct,
     getAllProduct,
     getProductById,
-    getProductByCategory
+    getProductByCategory,
+    getProductByPage
 }
