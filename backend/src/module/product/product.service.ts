@@ -33,10 +33,14 @@ const getProductByCategory =async (category: string) =>{
 }
 
 const getProductByPage =async (page: number,limit: number) =>{
+    const countDoc =await product.countDocuments()
+    const totalPage = countDoc/limit
     const skip = page*limit
     const result =await product.find().skip(skip).limit(limit)
-    
-    return result
+    if(result.length===0){
+        throw new appError("This page product not found", 404)
+    }
+    return {totalPage,result}
 }
 
 export default {
